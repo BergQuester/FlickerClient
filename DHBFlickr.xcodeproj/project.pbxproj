@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FEF4C731199AD0C400581371 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C730199AD0C400581371 /* Foundation.framework */; };
+		FEF4C733199AD0C400581371 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C732199AD0C400581371 /* CoreGraphics.framework */; };
+		FEF4C735199AD0C400581371 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C734199AD0C400581371 /* UIKit.framework */; };
+		FEF4C73B199AD0C400581371 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEF4C739199AD0C400581371 /* InfoPlist.strings */; };
+		FEF4C73D199AD0C400581371 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C73C199AD0C400581371 /* main.m */; };
+		FEF4C741199AD0C400581371 /* DHBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C740199AD0C400581371 /* DHBAppDelegate.m */; };
+		FEF4C744199AD0C400581371 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF4C742199AD0C400581371 /* Main_iPhone.storyboard */; };
+		FEF4C747199AD0C400581371 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF4C745199AD0C400581371 /* Main_iPad.storyboard */; };
+		FEF4C74A199AD0C400581371 /* DHBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C749199AD0C400581371 /* DHBViewController.m */; };
+		FEF4C74C199AD0C400581371 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF4C74B199AD0C400581371 /* Images.xcassets */; };
+		FEF4C753199AD0C400581371 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C752199AD0C400581371 /* XCTest.framework */; };
+		FEF4C754199AD0C400581371 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C730199AD0C400581371 /* Foundation.framework */; };
+		FEF4C755199AD0C400581371 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C734199AD0C400581371 /* UIKit.framework */; };
+		FEF4C75D199AD0C400581371 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEF4C75B199AD0C400581371 /* InfoPlist.strings */; };
+		FEF4C75F199AD0C400581371 /* DHBFlickrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C75E199AD0C400581371 /* DHBFlickrTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FEF4C756199AD0C400581371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEF4C725199AD0C400581371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEF4C72C199AD0C400581371;
+			remoteInfo = DHBFlickr;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FEF4C72D199AD0C400581371 /* DHBFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHBFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEF4C730199AD0C400581371 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FEF4C732199AD0C400581371 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FEF4C734199AD0C400581371 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FEF4C738199AD0C400581371 /* DHBFlickr-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DHBFlickr-Info.plist"; sourceTree = "<group>"; };
+		FEF4C73A199AD0C400581371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FEF4C73C199AD0C400581371 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FEF4C73E199AD0C400581371 /* DHBFlickr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DHBFlickr-Prefix.pch"; sourceTree = "<group>"; };
+		FEF4C73F199AD0C400581371 /* DHBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = DHBAppDelegate.h; sourceTree = "<group>"; };
+		FEF4C740199AD0C400581371 /* DHBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHBAppDelegate.m; sourceTree = "<group>"; };
+		FEF4C743199AD0C400581371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		FEF4C746199AD0C400581371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		FEF4C748199AD0C400581371 /* DHBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = DHBViewController.h; sourceTree = "<group>"; };
+		FEF4C749199AD0C400581371 /* DHBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHBViewController.m; sourceTree = "<group>"; };
+		FEF4C74B199AD0C400581371 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FEF4C751199AD0C400581371 /* DHBFlickrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DHBFlickrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEF4C752199AD0C400581371 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FEF4C75A199AD0C400581371 /* DHBFlickrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DHBFlickrTests-Info.plist"; sourceTree = "<group>"; };
+		FEF4C75C199AD0C400581371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FEF4C75E199AD0C400581371 /* DHBFlickrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHBFlickrTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEF4C72A199AD0C400581371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF4C733199AD0C400581371 /* CoreGraphics.framework in Frameworks */,
+				FEF4C735199AD0C400581371 /* UIKit.framework in Frameworks */,
+				FEF4C731199AD0C400581371 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEF4C74E199AD0C400581371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF4C753199AD0C400581371 /* XCTest.framework in Frameworks */,
+				FEF4C755199AD0C400581371 /* UIKit.framework in Frameworks */,
+				FEF4C754199AD0C400581371 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FEF4C724199AD0C400581371 = {
+			isa = PBXGroup;
+			children = (
+				FEF4C736199AD0C400581371 /* DHBFlickr */,
+				FEF4C758199AD0C400581371 /* DHBFlickrTests */,
+				FEF4C72F199AD0C400581371 /* Frameworks */,
+				FEF4C72E199AD0C400581371 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FEF4C72E199AD0C400581371 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C72D199AD0C400581371 /* DHBFlickr.app */,
+				FEF4C751199AD0C400581371 /* DHBFlickrTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEF4C72F199AD0C400581371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C730199AD0C400581371 /* Foundation.framework */,
+				FEF4C732199AD0C400581371 /* CoreGraphics.framework */,
+				FEF4C734199AD0C400581371 /* UIKit.framework */,
+				FEF4C752199AD0C400581371 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FEF4C736199AD0C400581371 /* DHBFlickr */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C73F199AD0C400581371 /* DHBAppDelegate.h */,
+				FEF4C740199AD0C400581371 /* DHBAppDelegate.m */,
+				FEF4C742199AD0C400581371 /* Main_iPhone.storyboard */,
+				FEF4C745199AD0C400581371 /* Main_iPad.storyboard */,
+				FEF4C748199AD0C400581371 /* DHBViewController.h */,
+				FEF4C749199AD0C400581371 /* DHBViewController.m */,
+				FEF4C74B199AD0C400581371 /* Images.xcassets */,
+				FEF4C737199AD0C400581371 /* Supporting Files */,
+			);
+			path = DHBFlickr;
+			sourceTree = "<group>";
+		};
+		FEF4C737199AD0C400581371 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C738199AD0C400581371 /* DHBFlickr-Info.plist */,
+				FEF4C739199AD0C400581371 /* InfoPlist.strings */,
+				FEF4C73C199AD0C400581371 /* main.m */,
+				FEF4C73E199AD0C400581371 /* DHBFlickr-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FEF4C758199AD0C400581371 /* DHBFlickrTests */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C75E199AD0C400581371 /* DHBFlickrTests.m */,
+				FEF4C759199AD0C400581371 /* Supporting Files */,
+			);
+			path = DHBFlickrTests;
+			sourceTree = "<group>";
+		};
+		FEF4C759199AD0C400581371 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FEF4C75A199AD0C400581371 /* DHBFlickrTests-Info.plist */,
+				FEF4C75B199AD0C400581371 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEF4C72C199AD0C400581371 /* DHBFlickr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEF4C762199AD0C400581371 /* Build configuration list for PBXNativeTarget "DHBFlickr" */;
+			buildPhases = (
+				FEF4C729199AD0C400581371 /* Sources */,
+				FEF4C72A199AD0C400581371 /* Frameworks */,
+				FEF4C72B199AD0C400581371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DHBFlickr;
+			productName = DHBFlickr;
+			productReference = FEF4C72D199AD0C400581371 /* DHBFlickr.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FEF4C750199AD0C400581371 /* DHBFlickrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEF4C765199AD0C400581371 /* Build configuration list for PBXNativeTarget "DHBFlickrTests" */;
+			buildPhases = (
+				FEF4C74D199AD0C400581371 /* Sources */,
+				FEF4C74E199AD0C400581371 /* Frameworks */,
+				FEF4C74F199AD0C400581371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEF4C757199AD0C400581371 /* PBXTargetDependency */,
+			);
+			name = DHBFlickrTests;
+			productName = DHBFlickrTests;
+			productReference = FEF4C751199AD0C400581371 /* DHBFlickrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEF4C725199AD0C400581371 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DHB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Daniel Bergquist";
+				TargetAttributes = {
+					FEF4C750199AD0C400581371 = {
+						TestTargetID = FEF4C72C199AD0C400581371;
+					};
+				};
+			};
+			buildConfigurationList = FEF4C728199AD0C400581371 /* Build configuration list for PBXProject "DHBFlickr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEF4C724199AD0C400581371;
+			productRefGroup = FEF4C72E199AD0C400581371 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEF4C72C199AD0C400581371 /* DHBFlickr */,
+				FEF4C750199AD0C400581371 /* DHBFlickrTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEF4C72B199AD0C400581371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF4C747199AD0C400581371 /* Main_iPad.storyboard in Resources */,
+				FEF4C74C199AD0C400581371 /* Images.xcassets in Resources */,
+				FEF4C744199AD0C400581371 /* Main_iPhone.storyboard in Resources */,
+				FEF4C73B199AD0C400581371 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEF4C74F199AD0C400581371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF4C75D199AD0C400581371 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEF4C729199AD0C400581371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF4C73D199AD0C400581371 /* main.m in Sources */,
+				FEF4C741199AD0C400581371 /* DHBAppDelegate.m in Sources */,
+				FEF4C74A199AD0C400581371 /* DHBViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEF4C74D199AD0C400581371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEF4C75F199AD0C400581371 /* DHBFlickrTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FEF4C757199AD0C400581371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEF4C72C199AD0C400581371 /* DHBFlickr */;
+			targetProxy = FEF4C756199AD0C400581371 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FEF4C739199AD0C400581371 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEF4C73A199AD0C400581371 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FEF4C742199AD0C400581371 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEF4C743199AD0C400581371 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		FEF4C745199AD0C400581371 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEF4C746199AD0C400581371 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		FEF4C75B199AD0C400581371 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEF4C75C199AD0C400581371 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FEF4C760199AD0C400581371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FEF4C761199AD0C400581371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEF4C763199AD0C400581371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DHBFlickr/DHBFlickr-Prefix.pch";
+				INFOPLIST_FILE = "DHBFlickr/DHBFlickr-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FEF4C764199AD0C400581371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DHBFlickr/DHBFlickr-Prefix.pch";
+				INFOPLIST_FILE = "DHBFlickr/DHBFlickr-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FEF4C766199AD0C400581371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DHBFlickr.app/DHBFlickr";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DHBFlickr/DHBFlickr-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DHBFlickrTests/DHBFlickrTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FEF4C767199AD0C400581371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DHBFlickr.app/DHBFlickr";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DHBFlickr/DHBFlickr-Prefix.pch";
+				INFOPLIST_FILE = "DHBFlickrTests/DHBFlickrTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEF4C728199AD0C400581371 /* Build configuration list for PBXProject "DHBFlickr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEF4C760199AD0C400581371 /* Debug */,
+				FEF4C761199AD0C400581371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEF4C762199AD0C400581371 /* Build configuration list for PBXNativeTarget "DHBFlickr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEF4C763199AD0C400581371 /* Debug */,
+				FEF4C764199AD0C400581371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FEF4C765199AD0C400581371 /* Build configuration list for PBXNativeTarget "DHBFlickrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEF4C766199AD0C400581371 /* Debug */,
+				FEF4C767199AD0C400581371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEF4C725199AD0C400581371 /* Project object */;
+}
