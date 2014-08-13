@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE3C16F7199AD9B90026DDB4 /* DHBFlickrImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C16F6199AD9B90026DDB4 /* DHBFlickrImage.m */; };
+		FE3C16F9199AE1550026DDB4 /* DHBFlickrImageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3C16F8199AE1550026DDB4 /* DHBFlickrImageTests.m */; };
 		FEF4C731199AD0C400581371 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C730199AD0C400581371 /* Foundation.framework */; };
 		FEF4C733199AD0C400581371 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C732199AD0C400581371 /* CoreGraphics.framework */; };
 		FEF4C735199AD0C400581371 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C734199AD0C400581371 /* UIKit.framework */; };
@@ -21,7 +23,7 @@
 		FEF4C754199AD0C400581371 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C730199AD0C400581371 /* Foundation.framework */; };
 		FEF4C755199AD0C400581371 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF4C734199AD0C400581371 /* UIKit.framework */; };
 		FEF4C75D199AD0C400581371 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FEF4C75B199AD0C400581371 /* InfoPlist.strings */; };
-		FEF4C75F199AD0C400581371 /* DHBFlickrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C75E199AD0C400581371 /* DHBFlickrTests.m */; };
+		FEF4C76B199AD23000581371 /* DHBFlickrConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF4C769199AD23000581371 /* DHBFlickrConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE3C16F5199AD9B90026DDB4 /* DHBFlickrImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHBFlickrImage.h; sourceTree = "<group>"; };
+		FE3C16F6199AD9B90026DDB4 /* DHBFlickrImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBFlickrImage.m; sourceTree = "<group>"; };
+		FE3C16F8199AE1550026DDB4 /* DHBFlickrImageTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBFlickrImageTests.m; sourceTree = "<group>"; };
 		FEF4C72D199AD0C400581371 /* DHBFlickr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DHBFlickr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF4C730199AD0C400581371 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEF4C732199AD0C400581371 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,7 +59,8 @@
 		FEF4C752199AD0C400581371 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FEF4C75A199AD0C400581371 /* DHBFlickrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DHBFlickrTests-Info.plist"; sourceTree = "<group>"; };
 		FEF4C75C199AD0C400581371 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FEF4C75E199AD0C400581371 /* DHBFlickrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DHBFlickrTests.m; sourceTree = "<group>"; };
+		FEF4C768199AD23000581371 /* DHBFlickrConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = DHBFlickrConnection.h; sourceTree = "<group>"; };
+		FEF4C769199AD23000581371 /* DHBFlickrConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHBFlickrConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,10 @@
 				FEF4C749199AD0C400581371 /* DHBViewController.m */,
 				FEF4C74B199AD0C400581371 /* Images.xcassets */,
 				FEF4C737199AD0C400581371 /* Supporting Files */,
+				FEF4C768199AD23000581371 /* DHBFlickrConnection.h */,
+				FEF4C769199AD23000581371 /* DHBFlickrConnection.m */,
+				FE3C16F5199AD9B90026DDB4 /* DHBFlickrImage.h */,
+				FE3C16F6199AD9B90026DDB4 /* DHBFlickrImage.m */,
 			);
 			path = DHBFlickr;
 			sourceTree = "<group>";
@@ -140,8 +150,8 @@
 		FEF4C758199AD0C400581371 /* DHBFlickrTests */ = {
 			isa = PBXGroup;
 			children = (
-				FEF4C75E199AD0C400581371 /* DHBFlickrTests.m */,
 				FEF4C759199AD0C400581371 /* Supporting Files */,
+				FE3C16F8199AE1550026DDB4 /* DHBFlickrImageTests.m */,
 			);
 			path = DHBFlickrTests;
 			sourceTree = "<group>";
@@ -255,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEF4C73D199AD0C400581371 /* main.m in Sources */,
+				FE3C16F7199AD9B90026DDB4 /* DHBFlickrImage.m in Sources */,
 				FEF4C741199AD0C400581371 /* DHBAppDelegate.m in Sources */,
+				FEF4C76B199AD23000581371 /* DHBFlickrConnection.m in Sources */,
 				FEF4C74A199AD0C400581371 /* DHBViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEF4C75F199AD0C400581371 /* DHBFlickrTests.m in Sources */,
+				FE3C16F9199AE1550026DDB4 /* DHBFlickrImageTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +483,7 @@
 				FEF4C764199AD0C400581371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FEF4C765199AD0C400581371 /* Build configuration list for PBXNativeTarget "DHBFlickrTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +492,7 @@
 				FEF4C767199AD0C400581371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

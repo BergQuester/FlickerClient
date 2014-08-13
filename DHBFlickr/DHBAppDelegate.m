@@ -7,11 +7,16 @@
 //
 
 #import "DHBAppDelegate.h"
+#import "DHBFlickrConnection.h"
 
 @implementation DHBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [DHBFlickrConnection requestPublicPhotosWithCompletionHandler:^(NSArray *images, NSError *error) {
+        NSLog(@"%@", images);
+    }];
+    
     // Override point for customization after application launch.
     return YES;
 }
