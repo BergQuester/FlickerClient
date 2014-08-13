@@ -24,8 +24,13 @@
             
             if (!parsedData)
             {
-                if (handler)
+                if ([parseError code] == 3840) {    // server sent back an invalid escape sequence, automatically try again.
+                                                    // If I had access to the server code, I'd just fix this.
+                    [DHBFlickrConnection requestPublicPhotosWithCompletionHandler:handler];
+                }
+                else if (handler) {
                     handler(nil, parseError);
+                }
                 return;
             }
             
@@ -45,6 +50,9 @@
                 handler([NSArray arrayWithArray:images], nil);
         }
         else {
+            
+            
+            
             if (handler)
                 handler(nil, connectionError);
         }
