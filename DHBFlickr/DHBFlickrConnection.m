@@ -11,7 +11,7 @@
 
 @implementation DHBFlickrConnection
 
-+(void)requestPublicPhotosWithCompletionHandler:(void (^)(NSArray *images, NSError* error))handler;
++(void)requestPublicPhotosWithCompletionHandler:(void (^)(NSArray *images, NSError* error))handler
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://api.flickr.com/services/feeds/photos_public.gne?lang=en-us&format=json&nojsoncallback=1"]];
     
@@ -34,8 +34,8 @@
             NSMutableArray *images = [NSMutableArray arrayWithCapacity:[items count]];
             
             for (NSDictionary *image in items) {
-                DHBFlickrImage *imageModel = [DHBFlickrImage imageWithMediaURL:[[image valueForKey:@"media"] valueForKey:@"m"]
-                                                                       linkURL:[image valueForKey:@"link"]
+                DHBFlickrImage *imageModel = [DHBFlickrImage imageWithMediaURL:[NSURL URLWithString:[[image valueForKey:@"media"] valueForKey:@"m"]]
+                                                                       linkURL:[NSURL URLWithString:[image valueForKey:@"link"]]
                                                                         author:[image valueForKey:@"author"]];
                 
                 [images addObject:imageModel];

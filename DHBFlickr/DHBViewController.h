@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DHBViewController : UIViewController
+@interface DHBViewController : UICollectionViewController
 
 @end

@@ -14,6 +14,7 @@
 @property (readwrite,retain) NSURL *mediaURL;
 @property (readwrite,retain) NSURL *linkURL;
 @property (readwrite,retain) NSString *author;
+@property (readwrite,retain) UIImage *thumbnail;
 
 @end
 
@@ -40,7 +41,30 @@
 
 -(NSString*)description
 {
-    return [NSString stringWithFormat:@"imageID: %lld, author: %@ mediaURL: %@ linkURL: %@", self.photoID, self.author, self.mediaURL, self.linkURL];
+    return [NSString stringWithFormat:@"imageID: %lld, author: %@ mediaURL: %@ linkURL: %@ thumbnail: %@", self.photoID, self.author, self.mediaURL, self.linkURL, self.thumbnail];
+}
+
+-(void)loadThumbnailWithCompletionHandler:(void (^)(DHBFlickrImage *flickrImage, NSError* error))handler
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.mediaURL];
+    
+    __weak DHBFlickrImage *weakSelf = self;
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+                               
+                               if (data)
+                               {
+                                   weakSelf.thumbnail = [UIImage imageWithData:data];
+                                   if (handler)
+                                       handler(weakSelf, nil);
+                               }
+                               else
+                               {
+                                   if (handler)
+                                       handler(weakSelf, connectionError);
+                               }
+                           }];
 }
 
 @end

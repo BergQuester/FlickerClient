@@ -14,7 +14,10 @@
 @property (readonly,retain) NSURL *mediaURL;
 @property (readonly,retain) NSURL *linkURL;
 @property (readonly,retain) NSString *author;
+@property (readonly,retain) UIImage *thumbnail;
 
 +(instancetype)imageWithMediaURL:(NSURL*)mediaURL linkURL:(NSURL*)linkURL author:(NSString*)author;
+
+-(void)loadThumbnailWithCompletionHandler:(void (^)(DHBFlickrImage *flickrImage, NSError* error))handler;
 
 @end
