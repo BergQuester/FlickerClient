@@ -9,11 +9,13 @@
 #import "DHBViewController.h"
 #import "DHBFlickrConnection.h"
 #import "DHBFlickrImage.h"
+#import "DHBCommentViewController.h"
 
 NSInteger const DHBImageViewTag = 1;
 
 @interface DHBViewController ()
 
+// The images currently displayed
 @property (readwrite,retain)NSArray *images;
 
 @end
@@ -27,12 +29,7 @@ NSInteger const DHBImageViewTag = 1;
     [self load:nil];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+// Loads several random public images from Flickr
 - (IBAction)load:(id)sender {
     [DHBFlickrConnection requestPublicPhotosWithCompletionHandler:^(NSArray *images, NSError *error) {
         
@@ -45,7 +42,7 @@ NSInteger const DHBImageViewTag = 1;
                 [image loadThumbnailWithCompletionHandler:^(DHBFlickrImage *flickrImage, NSError *error) {
                     
                     if (flickrImage.thumbnail) {
-                        
+                        // reload only that collection view cell
                         NSUInteger imageIndex = [weakSelf.images indexOfObject:flickrImage];
                         if (imageIndex != NSNotFound) {
                             [weakSelf.collectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:imageIndex inSection:0]]];
@@ -73,6 +70,13 @@ NSInteger const DHBImageViewTag = 1;
     }];
 }
 
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DHBFlickrImage *selectedImage = sender;
+    [(DHBCommentViewController *)[[[segue destinationViewController] viewControllers] firstObject] setPhotoAuthorName:selectedImage.author];
+}
 
 #pragma makr Collection view datasource methods
 
@@ -92,10 +96,25 @@ NSInteger const DHBImageViewTag = 1;
                                                                                    forIndexPath:indexPath];
 
     UIImageView *imageView = (UIImageView *)[newCell viewWithTag:DHBImageViewTag];
-    UIImage *thumbnail = [(DHBFlickrImage*)[self.images objectAtIndex:indexPath.item] thumbnail];
+    UIImage *thumbnail = [self.images[indexPath.item] thumbnail];
     [imageView setImage:thumbnail];
     
     return newCell;
+}
+
+#pragma makr Collection view delegate methods
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Determine the selected image, display comment view and fetch comments
+    DHBFlickrImage *selectedImage = self.images[indexPath.item];
+    [self performSegueWithIdentifier:@"comment" sender:selectedImage];
+    
+    DHBCommentViewController *commentViewController = (DHBCommentViewController *)[[(UINavigationController*)self.presentedViewController viewControllers] firstObject];
+
+    [DHBFlickrConnection requestCommentsForImageWithID:selectedImage.photoID completionHandler:^(NSArray *comments, NSError *error) {
+        commentViewController.comments = comments;
+    }];
 }
 
 

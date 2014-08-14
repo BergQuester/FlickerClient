@@ -41,16 +41,69 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="CiJ-vU-gZa">
-                        <barButtonItem key="rightBarButtonItem" title="Reload" id="2UP-iQ-Jm0">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="2UP-iQ-Jm0">
                             <connections>
                                 <action selector="load:" destination="pce-Dt-QND" id="dmQ-N2-1v5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="2J6-eL-P4B" kind="modal" identifier="comment" id="IVR-VX-ziI"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mou-kD-lPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="342" y="251"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="Dsd-7S-DyU">
+            <objects>
+                <viewController id="OXT-8F-tx0" customClass="DHBCommentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nvn-gt-HWO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hn1-RL-xQV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lLs-ku-GSH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uDq-Ec-42I">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RPF-bQ-ojd">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="oHC-NC-xK0">
+                            <connections>
+                                <action selector="done:" destination="OXT-8F-tx0" id="ew7-p0-uv9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="commentView" destination="uDq-Ec-42I" id="hBk-dp-Y1x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MJY-lI-3P4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="251"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LEi-2r-ioe">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="2J6-eL-P4B" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NOl-Bt-YOY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OXT-8F-tx0" kind="relationship" relationship="rootViewController" id="Zs9-lb-5v1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLM-MH-2Cy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="251"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iMM-um-Bob">

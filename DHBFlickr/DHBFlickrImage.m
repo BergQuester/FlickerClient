@@ -22,7 +22,7 @@
 
 +(instancetype)imageWithMediaURL:(NSURL*)mediaURL linkURL:(NSURL*)linkURL author:(NSString*)author
 {
-    DHBFlickrImage *image = [[DHBFlickrImage alloc] init];
+    DHBFlickrImage *image = [[[self class] alloc] init];
     image.mediaURL = mediaURL;
     image.linkURL = linkURL;
     image.author = author;
