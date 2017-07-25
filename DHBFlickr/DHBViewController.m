@@ -61,11 +61,15 @@ NSInteger const DHBImageViewTag = 1;
         else
         {
             // TODO: Should have a more user-friendly error
-            [[[UIAlertView alloc] initWithTitle:@"Error loading images"
-                                        message:error.debugDescription
-                                       delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil] show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error loading images"
+                                                                           message:error.debugDescription
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"Ok"
+                                                      style:UIAlertActionStyleDefault
+                                                    handler:nil]];
+            
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }];
 }
