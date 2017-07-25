@@ -20,9 +20,8 @@ NSString* const flickrServer = @"https://api.flickr.com";
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[flickrServer stringByAppendingString:@"/services/feeds/photos_public.gne?lang=en-us&format=json&nojsoncallback=1"]]];
     
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request
+                                     completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (data) {
             NSError *parseError = nil;
             NSDictionary *parsedData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&parseError];
@@ -51,15 +50,22 @@ NSString* const flickrServer = @"https://api.flickr.com";
                 [images addObject:imageModel];
             }
             
-            if (handler)
-                handler([NSArray arrayWithArray:images], nil);
+            if (handler) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    handler([NSArray arrayWithArray:images], nil);
+                });
+                
+            }
         }
         else {
-            if (handler)
-                handler(nil, connectionError);
+            if (handler) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    handler(nil, error);
+                });
+            }
         }
 
-    }];
+    }] resume];
 }
 
 +(void)requestCommentsForImageWithID:(long long)imageID completionHandler:(void (^)(NSArray *comments, NSError* error))handler
@@ -68,9 +74,8 @@ NSString* const flickrServer = @"https://api.flickr.com";
     NSString *requestURLString = [NSString stringWithFormat:@"%@/services/rest/?method=flickr.photos.comments.getList&api_key=%@&photo_id=%lld&format=json&nojsoncallback=1", flickrServer, flickrAPIKey, imageID];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURLString]];
     
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request
+                                     completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                
                                if (data) {
                                    NSError *parseError = nil;
@@ -93,14 +98,20 @@ NSString* const flickrServer = @"https://api.flickr.com";
                                        [comments addObject:commentModel];
                                    }
                                    
-                                   if (handler)
-                                       handler(comments, nil);
+                                   if (handler) {
+                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                           handler(comments, nil);
+                                       });
+                                   }
                                }
                                else {
-                                   if (handler)
-                                       handler(nil, connectionError);
+                                   if (handler) {
+                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                           handler(nil, error);
+                                       });
+                                   }
                                }
-                           }];
+                           }] resume];
 
 }
 

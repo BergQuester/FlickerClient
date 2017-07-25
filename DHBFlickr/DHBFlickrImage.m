@@ -49,22 +49,27 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:self.mediaURL];
     
     __weak DHBFlickrImage *weakSelf = self;
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request
+                                     completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                                
                                if (data)
                                {
                                    weakSelf.thumbnail = [UIImage imageWithData:data];
-                                   if (handler)
-                                       handler(weakSelf, nil);
+                                   if (handler) {
+                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                           handler(weakSelf, nil);
+                                       });
+                                   }
                                }
                                else
                                {
-                                   if (handler)
-                                       handler(weakSelf, connectionError);
+                                   if (handler) {
+                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                           handler(weakSelf, error);
+                                       });
+                                   }
                                }
-                           }];
+                           }] resume];
 }
 
 @end
