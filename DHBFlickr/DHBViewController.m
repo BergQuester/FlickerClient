@@ -18,6 +18,9 @@ NSInteger const DHBImageViewTag = 1;
 // The images currently displayed
 @property (readwrite,retain)NSMutableArray *images;
 
+// The current number of pages requested
+@property (readwrite,assign)NSUInteger currentPageCount;
+
 @end
 
 @implementation DHBViewController
@@ -26,13 +29,18 @@ NSInteger const DHBImageViewTag = 1;
 {
     [super viewDidLoad];
     
+    self.currentPageCount = 0;
     self.images = [NSMutableArray array];
-    [self load:nil];
+    [self loadNextPage];
 }
 
 // Loads several random public images from Flickr
-- (IBAction)load:(id)sender {
-    [DHBFlickrConnection requestPublicPhotosWithCompletionHandler:^(NSArray *images, NSError *error) {
+- (IBAction)loadNextPage {
+    
+    // request the next page
+    self.currentPageCount++;
+    
+    [DHBFlickrConnection requestPublicPhotosWithPage:self.currentPageCount completionHandler:^(NSArray *images, NSError *error) {
         
         if (images)
         {
@@ -133,7 +141,7 @@ NSInteger const DHBImageViewTag = 1;
     CGFloat bottomLocation = offset.y + bounds.size.height;
     
     if (bottomLocation >= size.height) {
-        [self load:nil];
+        [self loadNextPage];
     }
 
 }

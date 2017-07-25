@@ -16,9 +16,9 @@ NSString* const flickrServer = @"https://api.flickr.com";
 
 @implementation DHBFlickrConnection
 
-+(void)requestPublicPhotosWithCompletionHandler:(void (^)(NSArray *images, NSError* error))handler
++(void)requestPublicPhotosWithPage:(NSUInteger)pageNumber completionHandler:(void (^)(NSArray *images, NSError* error))handler
 {
-    NSString *URLString = [NSString stringWithFormat:@"%@/services/rest/?method=flickr.photos.getRecent&api_key=%@&extras=owner_name%%2C+url_q&format=json&nojsoncallback=1", flickrServer, flickrAPIKey];
+    NSString *URLString = [NSString stringWithFormat:@"%@/services/rest/?method=flickr.photos.getRecent&page=%ld&per_page=20&api_key=%@&extras=owner_name%%2C+url_q&format=json&nojsoncallback=1", flickrServer, (unsigned long)pageNumber, flickrAPIKey];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLString]];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request
@@ -31,7 +31,7 @@ NSString* const flickrServer = @"https://api.flickr.com";
             {
                 if ([parseError code] == 3840) {    // server sent back an invalid escape sequence, automatically try again.
                                                     // If I had access to the server code, I'd just fix this.
-                    [DHBFlickrConnection requestPublicPhotosWithCompletionHandler:handler];
+                    [DHBFlickrConnection requestPublicPhotosWithPage:pageNumber completionHandler:handler];
                 }
                 else if (handler) {
                     handler(nil, parseError);

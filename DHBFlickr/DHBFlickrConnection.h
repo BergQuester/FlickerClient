@@ -12,7 +12,7 @@
 
 // Request a list of public photos from Flickr
 // Calls a block that takes an arry of DHBFlickrImage objects or an error
-+(void)requestPublicPhotosWithCompletionHandler:(void (^)(NSArray *images, NSError* error))handler;
++(void)requestPublicPhotosWithPage:(NSUInteger)pageNumber completionHandler:(void (^)(NSArray *images, NSError* error))handler;
 
 // Request the comments for a given photo
 // Calls a block that takes an arry of DHBFlickrComment objects or an error
