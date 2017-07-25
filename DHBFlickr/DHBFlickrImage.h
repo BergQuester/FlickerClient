@@ -27,8 +27,11 @@
 // The photo thumbnail
 @property (readonly,retain) UIImage *thumbnail;
 
-// Construct an photo with the given data
-+(instancetype)imageWithMediaURL:(NSURL*)mediaURL linkURL:(NSURL*)linkURL author:(NSString*)author;
+// Construct a photo with the given data
++(instancetype)imageWithMediaURL:(NSURL*)mediaURL id:(long long)id author:(NSString*)author;
+
+// Construct a photo with the given dictionary
++(instancetype)imageWithDictionary:(NSDictionary*)imageDictionary;
 
 // Load the photo's thumbnail from the server
 -(void)loadThumbnailWithCompletionHandler:(void (^)(DHBFlickrImage *flickrImage, NSError* error))handler;

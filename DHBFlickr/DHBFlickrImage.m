@@ -12,7 +12,6 @@
 
 @property (readwrite) long long photoID;
 @property (readwrite,retain) NSURL *mediaURL;
-@property (readwrite,retain) NSURL *linkURL;
 @property (readwrite,retain) NSString *author;
 @property (readwrite,retain) UIImage *thumbnail;
 
@@ -20,25 +19,25 @@
 
 @implementation DHBFlickrImage
 
-+(instancetype)imageWithMediaURL:(NSURL*)mediaURL linkURL:(NSURL*)linkURL author:(NSString*)author
++(instancetype)imageWithMediaURL:(NSURL*)mediaURL id:(long long)id author:(NSString*)author
 {
     DHBFlickrImage *image = [[[self class] alloc] init];
     image.mediaURL = mediaURL;
-    image.linkURL = linkURL;
+    image.photoID = id;
     image.author = author;
     
-    // Not finding an entry for photo id, parse from the link URL
-    NSArray *pathComponents = [linkURL pathComponents];
-    long long photoID = [[pathComponents lastObject] longLongValue];
-    
-    if (photoID == 0)   // sometimes it's not the very last component
-        photoID = [[pathComponents objectAtIndex:[pathComponents count] - 2] longLongValue];
-    
-    image.photoID = photoID;
     
     return image;
 }
 
++(instancetype)imageWithDictionary:(NSDictionary*)imageDictionary
+{
+    DHBFlickrImage *image = [DHBFlickrImage imageWithMediaURL:[NSURL URLWithString:[imageDictionary valueForKey:@"url_q"]]
+                                                           id:[[imageDictionary valueForKey:@"id"] longLongValue]
+                                                       author:[imageDictionary valueForKey:@"ownername"]];
+    
+    return image;
+}
 -(NSString*)description
 {
     return [NSString stringWithFormat:@"imageID: %lld, author: %@ mediaURL: %@ linkURL: %@ thumbnail: %@", self.photoID, self.author, self.mediaURL, self.linkURL, self.thumbnail];

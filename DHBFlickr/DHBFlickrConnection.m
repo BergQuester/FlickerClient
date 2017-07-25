@@ -18,7 +18,8 @@ NSString* const flickrServer = @"https://api.flickr.com";
 
 +(void)requestPublicPhotosWithCompletionHandler:(void (^)(NSArray *images, NSError* error))handler
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[flickrServer stringByAppendingString:@"/services/feeds/photos_public.gne?lang=en-us&format=json&nojsoncallback=1"]]];
+    NSString *URLString = [NSString stringWithFormat:@"%@/services/rest/?method=flickr.photos.getRecent&api_key=%@&extras=owner_name%%2C+url_q&format=json&nojsoncallback=1", flickrServer, flickrAPIKey];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URLString]];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request
                                      completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -38,14 +39,12 @@ NSString* const flickrServer = @"https://api.flickr.com";
                 return;
             }
             
-            NSArray *items = [parsedData valueForKey:@"items"];
+            NSArray *items = [[parsedData valueForKey:@"photos"] valueForKey:@"photo"];
             
             NSMutableArray *images = [NSMutableArray arrayWithCapacity:[items count]];
             
             for (NSDictionary *image in items) {
-                DHBFlickrImage *imageModel = [DHBFlickrImage imageWithMediaURL:[NSURL URLWithString:[[image valueForKey:@"media"] valueForKey:@"m"]]
-                                                                       linkURL:[NSURL URLWithString:[image valueForKey:@"link"]]
-                                                                        author:[image valueForKey:@"author"]];
+                DHBFlickrImage *imageModel = [DHBFlickrImage imageWithDictionary:image];
                 
                 [images addObject:imageModel];
             }

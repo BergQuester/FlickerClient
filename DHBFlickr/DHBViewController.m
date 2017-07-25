@@ -16,7 +16,7 @@ NSInteger const DHBImageViewTag = 1;
 @interface DHBViewController ()
 
 // The images currently displayed
-@property (readwrite,retain)NSArray *images;
+@property (readwrite,retain)NSMutableArray *images;
 
 @end
 
@@ -25,7 +25,8 @@ NSInteger const DHBImageViewTag = 1;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    self.images = [NSMutableArray array];
     [self load:nil];
 }
 
@@ -47,14 +48,15 @@ NSInteger const DHBImageViewTag = 1;
                         if (imageIndex != NSNotFound) {
                             [weakSelf.collectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:imageIndex inSection:0]]];
                         }
-                            
+                        
                     } else {
                         NSLog(@"Error loading photo %lld: %@", flickrImage.photoID, error.debugDescription);
                     }
                     
                 }];
             }
-            self.images = images;
+            
+            [self.images addObjectsFromArray:images];
             
             [self.collectionView reloadData];
         }
@@ -119,6 +121,21 @@ NSInteger const DHBImageViewTag = 1;
     [DHBFlickrConnection requestCommentsForImageWithID:selectedImage.photoID completionHandler:^(NSArray *comments, NSError *error) {
         commentViewController.comments = comments;
     }];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint offset = scrollView.contentOffset;
+    CGRect bounds = scrollView.bounds;
+    CGSize size = scrollView.contentSize;
+    
+    
+    CGFloat bottomLocation = offset.y + bounds.size.height;
+    
+    if (bottomLocation >= size.height) {
+        [self load:nil];
+    }
+
 }
 
 
